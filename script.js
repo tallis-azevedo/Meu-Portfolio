@@ -23,18 +23,24 @@ ScrollReveal().reveal("section", {
   interval: 150,
 });
 
-emailjs.init("nHk_2KGvNWvsRgi_K");
-const form = document.getElementById("form-contato");
-form.addEventListener("submit", function (e) {
+emailjs.init('nHk_2KGvNWvsRgi_K');
+
+// Envio de formulário usando novo Template ID
+const form = document.getElementById('form-contato');
+form.addEventListener('submit', function(e) {
   e.preventDefault();
-  emailjs
-    .sendForm("service_qnnc7yz", "template_676fuod", this)
-    .then(() => {
-      alert("Mensagem enviada com sucesso!");
-      form.reset();
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Erro ao enviar. Tente novamente.");
-    });
+  emailjs.sendForm(
+    'service_qnnc7yz',    
+    'template_svyx56h',    
+    this                 
+  )
+  .then(response => {
+    console.log('SUCCESS!', response.status, response.text);
+    alert('Mensagem enviada com sucesso!');
+    form.reset();
+  })
+  .catch(err => {
+    console.error('EMAILJS ERROR:', err);
+    alert('Erro ao enviar. Confira o console para detalhes.');
+  });
 });
