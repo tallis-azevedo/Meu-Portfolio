@@ -206,6 +206,7 @@ nav {
   object-fit: contain;
   display: block;
   filter: none;
+  -webkit-filter: none;
   margin-bottom: 0.75rem;
 }
 .tech-card span {
