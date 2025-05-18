@@ -205,6 +205,7 @@ nav {
   height: var(--logo-size);
   object-fit: contain;
   display: block;
+  filter: none;
   margin-bottom: 0.75rem;
 }
 .tech-card span {
